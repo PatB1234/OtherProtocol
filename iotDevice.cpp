@@ -72,7 +72,7 @@ void receive_data(vector<int64_t> data) {
     int64_t totalSigned = ((totalShifted.at(0) - shift) + modulus) % modulus - shift;
     vector<int64_t> resultVector{totalSigned};
 
-    auto end = high_resolution_clock::now();
+    auto end = steady_clock::now();
     auto duration = duration_cast<milliseconds>(end - start);
     cout << "Time Taken: " << duration.count() << " ms" << endl;
     times.push_back(duration.count());
