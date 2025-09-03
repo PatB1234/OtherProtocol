@@ -7,7 +7,7 @@ using namespace std;
 using namespace std::chrono;
 
 KeyPair<DCRTPoly> kp1;
-time_point<steady_clock, high_resolution_clock::duration> start; // Variables to calculate and record time taken
+high_resolution_clock::time_point start; // Variables to calculate and record time taken
 
 void generateClientKeys() {
     kp1 = cc->KeyGen();
@@ -72,7 +72,7 @@ void receive_data(vector<int64_t> data) {
     int64_t totalSigned = ((totalShifted.at(0) - shift) + modulus) % modulus - shift;
     vector<int64_t> resultVector{totalSigned};
 
-    auto end = steady_clock::now();
+    auto end = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(end - start);
     cout << "Time Taken: " << duration.count() << " ms" << endl;
     times.push_back(duration.count());
