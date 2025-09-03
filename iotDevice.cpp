@@ -7,7 +7,7 @@ using namespace std;
 using namespace std::chrono;
 
 KeyPair<DCRTPoly> kp1;
-time_point<steady_clock, steady_clock::duration> start; // Variables to calculate and record time taken
+time_point<steady_clock, high_resolution_clock::duration> start; // Variables to calculate and record time taken
 
 void generateClientKeys() {
     kp1 = cc->KeyGen();

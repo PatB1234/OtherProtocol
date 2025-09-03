@@ -8,4 +8,4 @@ using namespace lbcrypto;
 using namespace std::chrono;
 
 void receive_data(vector<int64_t> data);
-extern time_point<steady_clock, steady_clock::duration> start;
+extern time_point<steady_clock, high_resolution_clock::duration> start;
